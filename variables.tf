@@ -29,4 +29,19 @@ variable "certificate_email" {
   description = "email adress that the certificate will be associated with on Let's Encrypt"
 }
 
+variable "filename_airgap" {
+  description = "filename of your airgap installation located under directory airgap"
+}
+
+variable "filename_license" {
+  description = "filename of your license located under directory airgap"
+}
+
+variable "filename_bootstrap" {
+  description = "filename of your bootstrap located under directory airgap"
+}
+
+variable "rds_password" {
+  description = "password for the RDS postgres database user"
+}
 
