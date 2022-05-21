@@ -292,17 +292,4 @@ Load balancer target
 
 ### Test the autoscaling
 
-After everything is working you should see one web server running and one web server as a target in the load balancer target group
-
-EC2   
-
-Load balancer target  
-
-**Change the Auto scaling group to have 2 servers**
-- Edit your Auto scaling group  
-
-- Change the desired capacity to 2  
-
-- After that you should see 2 EC2 instances and load balancer target with 2 instances  
-
-
+After everything is working you should see one TFE running. If you terminate the instance a new one will be created and can be used. 
