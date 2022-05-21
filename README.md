@@ -16,12 +16,12 @@ TFE installation airgap mode with Auto Scaling Group
 - [x] create nat gateway, and connect to private network with a route table
 - [x] route table association with the subnets 
 - [x] security group for allowing port 443 8800
-
-# to do
-- [ ] transfer files to bucket
+- [x] transfer files to bucket
       - airgap software
       - license
       - Download the installer bootstrapper
+
+# to do
 - [ ] RDS PostgreSQL database
 - [ ] install TFE
 - [ ] Get an Airgap software download
