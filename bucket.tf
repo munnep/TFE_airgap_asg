@@ -31,7 +31,7 @@ resource "aws_s3_object" "object_license" {
   key    = var.filename_license
   source = "airgap/${var.filename_license}"
 
-    depends_on = [
+  depends_on = [
     aws_s3_bucket.tfe-bucket-software
   ]
 
@@ -42,7 +42,7 @@ resource "aws_s3_object" "object_bootstrap" {
   key    = var.filename_bootstrap
   source = "airgap/${var.filename_bootstrap}"
 
-    depends_on = [
+  depends_on = [
     aws_s3_bucket.tfe-bucket-software
   ]
 }

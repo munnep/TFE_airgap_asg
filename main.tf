@@ -37,7 +37,7 @@ resource "aws_subnet" "private1" {
 resource "aws_subnet" "private2" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = cidrsubnet(var.vpc_cidr, 8, 12)
-  availability_zone = "${var.region}a"
+  availability_zone = "${var.region}b"
   tags = {
     Name = "${var.tag_prefix}-private2"
   }
@@ -137,7 +137,7 @@ resource "aws_security_group" "tfe_server_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-    ingress {
+  ingress {
     description = "https from internet"
     from_port   = 5432
     to_port     = 5432
