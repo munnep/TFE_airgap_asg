@@ -24,11 +24,11 @@ TFE installation airgap mode with Auto Scaling Group
 - [x] RDS PostgreSQL database
 - [x] Generate certificates with Let's Encrypt to use
 - [x] import TLS certificate
+- [x] create a LB (check Application Load Balancer or Network Load Balancer)
+- [x] publish a service over LB TFE dashboard and TFE application
+- [ ] create DNS CNAME for website to loadbalancer DNS
 
 # to do
 - [ ] install TFE
 - [ ] Auto scaling launch configuration
-- [ ] create a LB (check Application Load Balancer or Network Load Balancer)
-- [ ] publish a service over LB TFE dashboard and TFE application
 - [ ] Auto scaling group creating
-- [ ] create DNS CNAME for website to loadbalancer DNS
