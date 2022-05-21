@@ -22,12 +22,12 @@ TFE installation airgap mode with Auto Scaling Group
       - Download the installer bootstrapper
 - [x] Get an Airgap software download
 - [x] RDS PostgreSQL database
+- [x] Generate certificates with Let's Encrypt to use
+- [x] import TLS certificate
 
 # to do
 - [ ] install TFE
 - [ ] Auto scaling launch configuration
-- [ ] Generate certificates with Let's Encrypt to use
-- [ ] import TLS certificate
 - [ ] create a LB (check Application Load Balancer or Network Load Balancer)
 - [ ] publish a service over LB TFE dashboard and TFE application
 - [ ] Auto scaling group creating
