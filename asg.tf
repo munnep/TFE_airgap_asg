@@ -6,7 +6,7 @@ resource "aws_launch_configuration" "as_conf" {
   iam_instance_profile = aws_iam_instance_profile.profile.name
   key_name             = "patrick"
 
-    root_block_device {
+  root_block_device {
     volume_size = 50
 
   }
