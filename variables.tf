@@ -45,3 +45,19 @@ variable "rds_password" {
   description = "password for the RDS postgres database user"
 }
 
+variable "tfe_password" {
+  description = "password for tfe user"
+}
+
+variable "asg_min_size" {
+  description = "Autoscaling group minimal size"
+}
+
+variable "asg_max_size" {
+  description = "Autoscaling group maximal size"
+}
+
+variable "asg_desired_capacity" {
+  description = "Autoscaling group running number of instances"
+}
+

@@ -26,9 +26,9 @@ TFE installation airgap mode with Auto Scaling Group
 - [x] import TLS certificate
 - [x] create a LB (check Application Load Balancer or Network Load Balancer)
 - [x] publish a service over LB TFE dashboard and TFE application
-- [ ] create DNS CNAME for website to loadbalancer DNS
+- [x] create DNS CNAME for website to loadbalancer DNS
+- [x] install TFE
+- [x] Auto scaling launch configuration
+- [x] Auto scaling group creating
 
 # to do
-- [ ] install TFE
-- [ ] Auto scaling launch configuration
-- [ ] Auto scaling group creating
