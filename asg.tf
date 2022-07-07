@@ -7,12 +7,27 @@ resource "aws_launch_configuration" "as_conf" {
   instance_type        = "t3.xlarge"
   security_groups      = [aws_security_group.tfe_server_sg.id]
   iam_instance_profile = aws_iam_instance_profile.profile.name
-  key_name      = "${var.tag_prefix}-key"
+  key_name             = "${var.tag_prefix}-key"
 
   root_block_device {
     volume_size = 50
 
   }
+
+  ebs_block_device {
+    device_name = "/dev/sdh"
+    volume_size = 32
+    volume_type = "io1"
+    iops        = 1000
+  }
+
+  ebs_block_device {
+    device_name = "/dev/sdi"
+    volume_size = 100
+    volume_type = "io1"
+    iops        = 2000
+  }
+
 
   user_data = templatefile("${path.module}/scripts/user-data.sh", {
     tag_prefix         = var.tag_prefix

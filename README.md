@@ -7,12 +7,13 @@ TFE installation airgap mode with Auto Scaling Group
 
 
 # TODO
-- [] swappiness
-- [] disks
-- [] use standard ubuntu image with docker installation
-- [] 
+- [] able to connect to netdata information
+
 
 # DONE
+- [x] swappiness
+- [x] disks
+- [x] use standard ubuntu image with docker installation
 - [x] adding authorized keys 
 - [x] create VPC
 - [x] create 4 subnets, 2 for public network, 2 for private network
