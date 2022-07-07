@@ -6,10 +6,14 @@ TFE installation airgap mode with Auto Scaling Group
 
 
 
+# TODO
+- [] swappiness
+- [] disks
+- [] use standard ubuntu image with docker installation
+- [] 
 
-
-
-# done
+# DONE
+- [x] adding authorized keys 
 - [x] create VPC
 - [x] create 4 subnets, 2 for public network, 2 for private network
 - [x] create internet gw and connect to public network with a route table
@@ -31,4 +35,4 @@ TFE installation airgap mode with Auto Scaling Group
 - [x] Auto scaling launch configuration
 - [x] Auto scaling group creating
 
-# to do
+

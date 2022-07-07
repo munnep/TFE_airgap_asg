@@ -175,3 +175,7 @@ resource "aws_security_group" "tfe_server_sg" {
   }
 }
 
+resource "aws_key_pair" "default-key" {
+  key_name   = "${var.tag_prefix}-key"
+  public_key = var.public_key
+}

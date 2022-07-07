@@ -1,10 +1,13 @@
+
+
+
 resource "aws_launch_configuration" "as_conf" {
   name_prefix          = "${var.tag_prefix}-lc"
   image_id             = var.ami
   instance_type        = "t3.xlarge"
   security_groups      = [aws_security_group.tfe_server_sg.id]
   iam_instance_profile = aws_iam_instance_profile.profile.name
-  key_name             = "patrick"
+  key_name      = "${var.tag_prefix}-key"
 
   root_block_device {
     volume_size = 50
