@@ -14,6 +14,14 @@ resource "aws_lb_target_group" "lb_target_group2" {
   vpc_id   = aws_vpc.main.id
 }
 
+# loadbalancer Target Group
+resource "aws_lb_target_group" "lb_target_group3" {
+  name     = "${var.tag_prefix}-target-group3"
+  port     = 19999
+  protocol = "HTTP"
+  vpc_id   = aws_vpc.main.id
+}
+
 
 # application load balancer
 resource "aws_lb" "lb_application" {
@@ -56,3 +64,13 @@ resource "aws_lb_listener" "front_end2" {
   }
 }
 
+resource "aws_lb_listener" "front_end3" {
+  load_balancer_arn = aws_lb.lb_application.arn
+  port              = "19999"
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.lb_target_group3.arn
+  }
+}

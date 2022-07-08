@@ -1,6 +1,7 @@
 
 resource "aws_s3_bucket" "tfe-bucket" {
-  bucket = "${var.tag_prefix}-bucket"
+  bucket        = "${var.tag_prefix}-bucket"
+  force_destroy = true
 
   tags = {
     Name = "${var.tag_prefix}-bucket"
@@ -8,7 +9,8 @@ resource "aws_s3_bucket" "tfe-bucket" {
 }
 
 resource "aws_s3_bucket" "tfe-bucket-software" {
-  bucket = "${var.tag_prefix}-software"
+  bucket        = "${var.tag_prefix}-software"
+  force_destroy = true
 
   tags = {
     Name = "${var.tag_prefix}-software"
