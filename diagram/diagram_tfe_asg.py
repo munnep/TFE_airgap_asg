@@ -33,7 +33,7 @@ with Diagram(
             # Subcluster
             with Cluster("subnet_private2"):
                 with Cluster("DB subnet"):
-                            postgresql2 = RDSPostgresqlInstance("RDS Instance")
+                            postgresql2 = RDSPostgresqlInstance("RDS different AZ")
             with Cluster("subnet_public2"):
                 loadbalancer2 = ElbApplicationLoadBalancer("Application \n Load Balancer")
                         # Subcluster
@@ -43,6 +43,7 @@ with Diagram(
             with Cluster("subnet_public1"):
                 loadbalancer1 = ElbApplicationLoadBalancer("Application \n Load Balancer")
                 nat_gateway = NATGateway("nat_gateway")
+                tf_client = Server("Client with Terraform")
             # Subcluster
             with Cluster("subnet_private1"):
                 asg_tfe_server = EC2AutoScaling("Autoscaling Group \n TFE instance")
@@ -51,6 +52,7 @@ with Diagram(
  
     # Diagram
     user >>  route53
+    user >>  tf_client >> asg_tfe_server
     user >>  [ loadbalancer1, 
               loadbalancer2] >> asg_tfe_server 
 
