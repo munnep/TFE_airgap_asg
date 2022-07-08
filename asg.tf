@@ -61,7 +61,7 @@ resource "aws_autoscaling_group" "as_group" {
   desired_capacity          = var.asg_desired_capacity
   force_delete              = true
   launch_configuration      = aws_launch_configuration.as_conf.name
-  vpc_zone_identifier       = [aws_subnet.private1.id, aws_subnet.private2.id]
+  vpc_zone_identifier       = [aws_subnet.private1.id]
   target_group_arns         = [aws_lb_target_group.lb_target_group1.id, aws_lb_target_group.lb_target_group2.id, aws_lb_target_group.lb_target_group3.id]
 
 

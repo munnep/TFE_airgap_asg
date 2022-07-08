@@ -29,10 +29,11 @@ with Diagram(
         igw_gateway = InternetGateway("igw")
 
         with Cluster("Availability Zone: eu-north-1b"):
+
             # Subcluster
             with Cluster("subnet_private2"):
                 with Cluster("DB subnet"):
-                            postgresql2 = RDSPostgresqlInstance("RDS different AZ")
+                            postgresql2 = RDSPostgresqlInstance("RDS Instance")
             with Cluster("subnet_public2"):
                 loadbalancer2 = ElbApplicationLoadBalancer("Application \n Load Balancer")
                         # Subcluster
@@ -44,7 +45,7 @@ with Diagram(
                 nat_gateway = NATGateway("nat_gateway")
             # Subcluster
             with Cluster("subnet_private1"):
-                asg_tfe_server = EC2AutoScaling("Autoscaling Group \n Webserver")
+                asg_tfe_server = EC2AutoScaling("Autoscaling Group \n TFE instance")
                 with Cluster("DB subnet"):
                         postgresql = RDSPostgresqlInstance("RDS Instance")
  
@@ -53,11 +54,10 @@ with Diagram(
     user >>  [ loadbalancer1, 
               loadbalancer2] >> asg_tfe_server 
 
-    asg_tfe_server >> nat_gateway >> igw_gateway 
 
     asg_tfe_server >> [postgresql,
-                       bucket_tfe, 
-                       bucket_files]
+                       bucket_tfe,
+                       bucket_files
+    ]
     
-    route53
 diag

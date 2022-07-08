@@ -6,6 +6,10 @@ output "tfe_dashboard" {
   value = "https://${var.dns_hostname}.${var.dns_zonename}:8800"
 }
 
+output "tfe_netdata_performance_dashboard" {
+  value = "http://${var.dns_hostname}.${var.dns_zonename}:19999"
+}
+
 output "tfe_appplication" {
   value = "https://${var.dns_hostname}.${var.dns_zonename}"
 }

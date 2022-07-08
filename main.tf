@@ -72,6 +72,7 @@ resource "aws_eip" "nateIP" {
 }
 
 
+
 resource "aws_nat_gateway" "NAT" {
   allocation_id = aws_eip.nateIP.id
   subnet_id     = aws_subnet.public1.id
@@ -79,8 +80,10 @@ resource "aws_nat_gateway" "NAT" {
   tags = {
     Name = "${var.tag_prefix}-nat"
   }
-
 }
+
+
+
 
 resource "aws_route_table" "privateroutetable" {
   vpc_id = aws_vpc.main.id
@@ -94,6 +97,7 @@ resource "aws_route_table" "privateroutetable" {
   }
 
 }
+
 
 
 resource "aws_route_table_association" "PublicRT1" {
