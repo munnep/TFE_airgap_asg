@@ -53,22 +53,22 @@ The repo assumes you have no certificates and want to create them using Let's En
 # How to
 
 - Clone the repository to your local machine
-```
+```sh
 git clone https://github.com/munnep/tfe_airgap_asg.git
 ```
 - Go to the directory
-```
+```sh
 cd tfe_airgap_asg
 ```
 - Set your AWS credentials
-```
+```sh
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 export AWS_SESSION_TOKEN=
 ```
 - Store the files needed for the TFE Airgap installation under the `./airgap` directory, See the notes [here](./airgap/README.md)
 - create a file called `variables.auto.tfvars` with the following contents and your own values
-```
+```hcl
 tag_prefix               = "patrick-airgap2"                          # TAG prefix for names to easily find your AWS resources
 region                   = "eu-north-1"                               # Region to create the environment
 vpc_cidr                 = "10.234.0.0/16"                            # subnet mask that can be used 
@@ -88,40 +88,38 @@ asg_max_size             = 1                                          # autoscal
 asg_desired_capacity     = 1                                          # autoscaling group desired capacity. Currently 1 is the only option
 ```
 - Terraform initialize
-```
+```sh
 terraform init
 ```
 - Terraform plan
-```
+```sh
 terraform plan
 ```
 - Terraform apply
-```
+```sh
 terraform apply
 ```
 - Terraform output should create 40 resources and show you the public dns string you can use to connect to the TFE instance
-```
+```sh
 Apply complete! Resources: 46 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-ssh_tf_client = "ssh ubuntu@patrick-tfe6-client.bg.hashicorp-success.com"
-ssh_tfe_server = "ssh ubuntu@patrick-tfe6.bg.hashicorp-success.com"
-tfe_appplication = "https://patrick-tfe6.bg.hashicorp-success.com"
-tfe_dashboard = "https://patrick-tfe6.bg.hashicorp-success.com:8800"
+ssh_tf_client = "ssh ubuntu@patrick-tfe3-client.bg.hashicorp-success.com"
+ssh_tfe_server = "ssh -J ubuntu@patrick-tfe3-client.bg.hashicorp-success.com ubuntu@<internal ip address of the TFE server>"
+tfe_appplication = "https://patrick-tfe3.bg.hashicorp-success.com"
+tfe_dashboard = "https://patrick-tfe3.bg.hashicorp-success.com:8800"
+tfe_netdata_performance_dashboard = "http://patrick-tfe3.bg.hashicorp-success.com:19999"
 ```
 - Connect to the TFE dashboard. This could take 10 minutes before fully functioning
-![](media/20220516105301.png)   
 - Click on the open button to create your organization and workspaces
 
 
-
-
 # TODO
-- [] able to connect to netdata information
 
 
 # DONE
+- [x] able to connect to netdata information
 - [x] swappiness
 - [x] disks
 - [x] use standard ubuntu image with docker installation
