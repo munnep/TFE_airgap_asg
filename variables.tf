@@ -61,3 +61,11 @@ variable "asg_desired_capacity" {
   description = "Autoscaling group running number of instances"
 }
 
+variable "public_key" {
+  type        = string
+  description = "public to use on the instances"
+}
+
+variable "terraform_client_version" {
+  description = "Terraform client installed on the terraform client machine"
+}
