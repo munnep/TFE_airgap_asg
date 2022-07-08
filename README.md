@@ -113,6 +113,11 @@ tfe_netdata_performance_dashboard = "http://patrick-tfe3.bg.hashicorp-success.co
 ```
 - Connect to the TFE dashboard. This could take 10 minutes before fully functioning
 - Click on the open button to create your organization and workspaces
+- When you are done you can destroy the entire environment
+```sh
+terraform destroy
+```
+
 
 
 # TODO
