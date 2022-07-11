@@ -99,7 +99,7 @@ terraform plan
 ```sh
 terraform apply
 ```
-- Terraform output should create 40 resources and show you the public dns string you can use to connect to the TFE instance
+- Terraform output should create 46 resources and show you the public dns string you can use to connect to the TFE instance
 ```sh
 Apply complete! Resources: 46 added, 0 changed, 0 destroyed.
 
@@ -112,7 +112,15 @@ tfe_dashboard = "https://patrick-tfe3.bg.hashicorp-success.com:8800"
 tfe_netdata_performance_dashboard = "http://patrick-tfe3.bg.hashicorp-success.com:19999"
 ```
 - Connect to the TFE dashboard. This could take 10 minutes before fully functioning
-- Click on the open button to create your organization and workspaces
+see the url for tfe_dashboard in your dashboard. 
+- Unlock the dashboard with password from your `variables.auto.tfvars`  
+![](media/20220711165147.png)    
+- Click on the open button to go to the TFE application page  
+![](media/20220711165253.png)  
+- Create the first account  
+![](media/20220711165340.png)
+- create your organization and workspaces  
+![](media/20220711165420.png)  
 - When you are done you can destroy the entire environment
 ```sh
 terraform destroy
