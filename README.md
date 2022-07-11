@@ -111,8 +111,8 @@ tfe_appplication = "https://patrick-tfe3.bg.hashicorp-success.com"
 tfe_dashboard = "https://patrick-tfe3.bg.hashicorp-success.com:8800"
 tfe_netdata_performance_dashboard = "http://patrick-tfe3.bg.hashicorp-success.com:19999"
 ```
-- Connect to the TFE dashboard. This could take 10 minutes before fully functioning
-see the url for tfe_dashboard in your dashboard. 
+- Connect to the TFE dashboard. This could take 10 minutes before fully functioning.  
+See the url for tfe_dashboard in your terraform output. 
 - Unlock the dashboard with password from your `variables.auto.tfvars`  
 ![](media/20220711165147.png)    
 - Click on the open button to go to the TFE application page  
