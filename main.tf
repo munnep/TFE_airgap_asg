@@ -475,7 +475,8 @@ resource "aws_launch_configuration" "as_conf" {
 
   root_block_device {
     volume_size = 50
-
+    volume_type = "io1"
+    iops        = 1000
   }
 
   ebs_block_device {
